@@ -49,6 +49,10 @@ let userResponse = readLine()?.lowercased() ?? "error"
                         print("DO YOU WANT TO PLAY???")
                         print("YES OR NO")
                          userAnswer = readLine()!
+                    guard userResponse.count == 1 else {
+                        print("Please Only enter 1 Letter")
+                        continue
+                    }
                }
             }
         }
@@ -56,7 +60,7 @@ let userResponse = readLine()?.lowercased() ?? "error"
     } else {
         print("WRONG!! TRY AGAIN!!!")
         print("")
-        print("chances: \(tries)")
+        print("chances: \(tries - 1)")
         wrongletters.append(userResponse)
         print(wrongletters)
         tries -= 1
@@ -68,6 +72,10 @@ let userResponse = readLine()?.lowercased() ?? "error"
             print("DO YOU WANT TO PLAY???")
             print("YES OR NO")
          userAnswer = readLine()!
+            guard userResponse.count == 1 else {
+                print("Please Only enter 1 Letter")
+                continue
+            }
         }
     }
 }
